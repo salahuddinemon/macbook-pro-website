@@ -7,6 +7,11 @@ function totalPrice() {
     let subTotal = parseInt(macPrice) + parseInt(memoryPrice) + parseInt(ssdMediumPrice) + parseInt(withDeliveryCost);
     let totalPriceText = document.getElementById('total-cost');
     totalPriceText.innerText = subTotal;
+
+    //grand-total price
+    const finalTotal = document.getElementById('final-total');
+    const finalTotalText = parseInt(finalTotal.innerText);
+    finalTotal.innerText = subTotal;
 }
 function updateTotal(amount) {
     //set memory cost
@@ -62,3 +67,47 @@ document.getElementById('delivery-without-cost').addEventListener('click', funct
 document.getElementById('delivery-with-cost').addEventListener('click', function () {
     updateDeliverTotal(20);
 })
+//apply promo code to get waver
+document.getElementById('promo-button').addEventListener('click', function () {
+    //input promo code
+    const finalTotal = document.getElementById('final-total');
+    const promoInputfield = document.getElementById('promo-code');
+    const usePromoInput = promoInputfield.value;
+
+    if (usePromoInput == 'stevekaku') {
+        const promoCodeApply = (80 / 100) * parseFloat(finalTotal.innerText);
+        finalTotal.innerText = promoCodeApply;
+        const disbaleButtton = document.getElementById('promo-button');
+        disbaleButtton.disabled = true;
+        promoInputfield.value = '';
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function promoCodeApply(event) {
+    const finalTotal = document.getElementById('final-total');
+    const promoInputfield = document.getElementById('promo-input');
+    const promoInputValue = promoInputfield.value;
+
+    //verifying the code
+    if (promoInputValue == 'stevekaku') {
+        payablePriceTotal = parseInt(finalTotal.innerText) / 20;
+        promoInputfield.value = '';
+    }
+    else {
+
+    }
+} */
