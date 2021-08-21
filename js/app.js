@@ -82,32 +82,3 @@ document.getElementById('promo-button').addEventListener('click', function () {
         promoInputfield.value = '';
     }
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function promoCodeApply(event) {
-    const finalTotal = document.getElementById('final-total');
-    const promoInputfield = document.getElementById('promo-input');
-    const promoInputValue = promoInputfield.value;
-
-    //verifying the code
-    if (promoInputValue == 'stevekaku') {
-        payablePriceTotal = parseInt(finalTotal.innerText) / 20;
-        promoInputfield.value = '';
-    }
-    else {
-
-    }
-} */
